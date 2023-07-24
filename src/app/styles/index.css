@@ -1,0 +1,14 @@
+@import "reset";
+@import "variables";
+
+
+@font-face {
+    font-family: Consolas;
+    src:
+        local("Consolas"),
+        url("./fonts/Consolas.ttf");
+}
+
+* {
+    font-family: var(--font-family-main);
+}
