@@ -1,20 +1,11 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { asyncfetchPosts } from "../../../widgets/PostsCardBox/modal/services/asyncfetchPosts";
+import { useParams } from "react-router-dom";
+import { PostBox } from "../../../widgets/PostBox/ui/PostBox";
 
 export function PostsListPage() {
 
-
-    const dispatch = useDispatch()
-
-     useEffect(() => {
-        dispatch(asyncfetchPosts());
-    }, []);
-
-    const posts = useSelector(state => state.posts.posts)
-    console.log(posts);
+    const { id } = useParams();
 
     return (
-        <h2>qwerty</h2>
+        <PostBox listId={id}/>
     )
 }
