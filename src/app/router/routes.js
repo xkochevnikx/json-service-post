@@ -1,5 +1,6 @@
 import React from 'react';
+import { PostsListPage } from '../../pages/PostsListPage/ui/PostsListPage';
 
 export const routes = [
-    { path: '/:page', component: <PostsListPage /> },
+    { path: '/post/:id', component: <PostsListPage /> },
 ];
