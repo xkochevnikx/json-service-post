@@ -1,19 +1,23 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { asyncfetchPosts } from "../modal/services/asyncfetchPosts";
 
-export const PostList = (props) => {
+export const PostList = () => {
 
-    const { listId } = props; 
+    const [postList, setPostList] = useState();
 
-    const posts = useSelector(state => state.posts.posts)
-    console.log(posts);
- 
     const dispatch = useDispatch()
 
     useEffect(() => {
-        dispatch(asyncfetchPosts(listId));
-    }, [listId]);
+        dispatch(asyncfetchPosts());
+    }, []);
+
+    const posts = useSelector(state => state.posts.posts)
+
+    useEffect(() => {
+        setPostList(posts)
+    },[posts])
+
 
     return (
         <>
