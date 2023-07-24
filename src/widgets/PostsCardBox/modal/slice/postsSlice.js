@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { asyncfetchPosts } from './asyncThunk/asyncFetchPosts';
+import { asyncfetchPosts } from '../services/asyncfetchPosts';
 
 const initialState = {
     todos: [],
