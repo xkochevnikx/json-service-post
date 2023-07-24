@@ -1,15 +1,25 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { asyncfetchPosts } from "../modal/services/asyncfetchPosts";
+import { usePosts } from "../../../shared/lib/hooks/usePosts";
 
 export const PostList = () => {
 
-    const [postList, setPostList] = useState();
+    const [limit, setLimit] = useState(10);
+
+    const [page, setPage] = useState(1);
+
+    const [postList, setPostList] = useState([]);
+
+
+    const seachedPosts = usePosts(
+        postList,
+      );
 
     const dispatch = useDispatch()
 
     useEffect(() => {
-        dispatch(asyncfetchPosts());
+        dispatch(asyncfetchPosts({limit, page}));
     }, []);
 
     const posts = useSelector(state => state.posts.posts)
@@ -18,6 +28,11 @@ export const PostList = () => {
         setPostList(posts)
     },[posts])
 
+    
+
+    // function changePage(p) {
+    //     setPage(p);
+    //   }
 
     return (
         <>
