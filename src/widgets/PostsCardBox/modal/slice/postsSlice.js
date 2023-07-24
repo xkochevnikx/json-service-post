@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { asyncfetchPosts } from '../services/asyncfetchPosts';
 
 const initialState = {
-    todos: [],
+    posts: [],
     isLoading: false,
     error: null,
 };
@@ -21,7 +21,7 @@ const postsSlice = createSlice({
         },
         [asyncfetchPosts.fulfilled]: (state, action) => {
             state.isLoading = false;
-            state.todos = action.payload;
+            state.posts = action.payload;
         },
         [asyncfetchPosts.rejected]: (state, action) => {
             state.isLoading = false;
