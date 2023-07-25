@@ -1,0 +1,11 @@
+.search {
+    max-width: 631px;
+    height: 52px;
+    position: relative;
+}
+
+.btnSubmit {
+   position: absolute;
+   right: 20px;
+   top: 15px;
+}

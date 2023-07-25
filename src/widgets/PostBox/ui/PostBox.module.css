@@ -1,5 +1,12 @@
 .PostBox {
-    max-width: 1232px;
-    max-height: 820px;
+    width: 1232px;
+    height: 820px;
     box-shadow: 0px 4px 27px 0px rgba(230, 231, 234, 0.78);
+}
+
+.PostBoxWrapper {
+    margin: 20px 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }

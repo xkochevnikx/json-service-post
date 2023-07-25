@@ -49,10 +49,12 @@ export const PostList = () => {
     return (
         <>
             <h1>Feature PostList</h1>
+            
             <h2>в фиче будет селект сверху и ниже сущность postList которой postItem</h2>
                 {seachedPosts.slice((page - 1) * limit, page * limit).map((post) => (
                     <h2 key={post.id}>{post.id} {post.title}</h2>
                 ))}
+
             <PaginationList changePage={changePage} 
                 page={page} 
                 totalPages={seachedPosts.length} 

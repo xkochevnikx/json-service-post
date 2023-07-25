@@ -7,8 +7,11 @@ export function PostBox () {
 
     return (
         <div className={cls.PostBox}>
+          <div className={cls.PostBoxWrapper}>
             <SearchPosts/>
             <PostList/>
+          </div>
+            
         </div>
     );
 };
