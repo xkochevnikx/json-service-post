@@ -11,7 +11,7 @@ export const PostList = () => {
 
     const [page, setPage] = useState(1);
 
-    const [paramsSearch, setParamsSearch] = useSearchParams();
+    const [_, setParamsSearch] = useSearchParams();
 
     const dispatch = useDispatch()
 
@@ -51,7 +51,7 @@ export const PostList = () => {
         <>
             <h1>Feature PostList</h1>
             <h2>в фиче будет селект сверху и ниже сущность postList которой postItem</h2>
-                {seachedPosts.map((post) => (
+                {seachedPosts.slice((page - 1) * limit, page * limit).map((post) => (
                     <h2 key={post.id}>{post.id} {post.title}</h2>
                 ))}
             <PaginationList changePage={changePage} 
