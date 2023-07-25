@@ -22,8 +22,8 @@ export const PostList = () => {
     useEffect(() => {
           setParamsSearch({
             q: page,
-          });
-      }, [page]);
+          }); 
+     }, [page]);
 
     const posts = useSelector(state => state.posts.posts)
 
@@ -32,9 +32,8 @@ export const PostList = () => {
     const seachedPosts = usePosts(
         posts,
         searchQuery
-      );
+    );
 
-    //функция изменения текущей страницы
     function changePage(p) {
         setPage(p);
     };
