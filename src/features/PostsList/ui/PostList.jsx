@@ -4,6 +4,7 @@ import { asyncfetchPosts } from "../modal/services/asyncfetchPosts";
 import { usePosts } from "../../../shared/lib/hooks/usePosts";
 import { PaginationList } from "../../../entities/PaginationList/PaginationList";
 import { useSearchParams } from "react-router-dom";
+import cls from "./PostList.module.css"
 
 export const PostList = () => {
 
@@ -47,8 +48,12 @@ export const PostList = () => {
     };
 
     return (
-        <>
-            <h1>Feature PostList</h1>
+        <div>
+            <div className={cls.PostListNav}>
+                <div><span>ID</span></div>
+                <div><span>Заголовок</span></div>
+                <div><span>Описание</span></div>
+            </div>
             
             <h2>в фиче будет селект сверху и ниже сущность postList которой postItem</h2>
                 {seachedPosts.slice((page - 1) * limit, page * limit).map((post) => (
@@ -62,7 +67,7 @@ export const PostList = () => {
                 changePageForward={changePageForward}
                 changePageBack={changePageBack}
             />
-        </>
+        </div>
     );
 };
 
