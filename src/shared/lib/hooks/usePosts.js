@@ -1,11 +1,17 @@
 import { useMemo } from "react";
 
-export const usePosts = (posts, searchQery) => {
+/**
+ * Хук, осуществляет фильтрацию данных по поисковому запросу
+ * @posts массив постов
+ * @searchQuery поисковая строка 
+ */
+
+export const usePosts = (posts, searchQuery) => {
   const seachedPosts = useMemo(() => {
     return posts.filter(post =>
-      post.title.toLowerCase().includes(searchQery)
+      post.title.toLowerCase().includes(searchQuery)
     );
-  }, [searchQery, posts]);
+  }, [searchQuery, posts]);
 
   return seachedPosts;
 };

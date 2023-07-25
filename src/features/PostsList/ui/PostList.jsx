@@ -9,13 +9,6 @@ export const PostList = () => {
 
     const [page, setPage] = useState(1);
 
-    const [postList, setPostList] = useState([]);
-
-
-    const seachedPosts = usePosts(
-        postList,
-      );
-
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -24,11 +17,14 @@ export const PostList = () => {
 
     const posts = useSelector(state => state.posts.posts)
 
-    useEffect(() => {
-        setPostList(posts)
-    },[posts])
-
+    const searchQuery = useSelector(state => state.search.text)
     
+    const seachedPosts = usePosts(
+        posts,
+        searchQuery
+      );
+
+
 
     // function changePage(p) {
     //     setPage(p);
@@ -38,6 +34,9 @@ export const PostList = () => {
         <>
             <h1>Feature PostList</h1>
             <h2>в фиче будет селект сверху и ниже сущность postList которой postItem</h2>
+            {seachedPosts.map((post) => (
+                <h2 key={post.id}>{post.title}</h2>
+            ))}
         </>
     );
 };
