@@ -1,0 +1,16 @@
+.PostListNav {
+    width: 100%;
+    height: 54px;
+    background-color: #474955;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    font-size: var(--font-size-m);
+    color: white;
+}
+
+.NavFirstBox {
+    display: flex;
+    flex-direction: row;
+}
