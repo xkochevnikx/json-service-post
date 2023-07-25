@@ -1,16 +1,10 @@
-.PostListNav {
-    width: 100%;
-    height: 54px;
-    background-color: #474955;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    font-size: var(--font-size-m);
-    color: white;
+.container {
+   display: grid;
+   grid-template-columns: 200px 1fr minmax(100px, 500px);
+   grid-template-rows: 100px 1fr;
+
 }
 
-.NavFirstBox {
-    display: flex;
-    flex-direction: row;
+.item {
+    border: 1px solid black;
 }
