@@ -1,2 +1,3 @@
 //url api
-export const API = 'https://jsonplaceholder.typicode.com/posts';
+export const API =
+    'https://jsonplaceholder.typicode.com/posts';

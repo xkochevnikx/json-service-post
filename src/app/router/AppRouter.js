@@ -1,4 +1,4 @@
-//корневой роутер 
+//корневой роутер
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { routes } from './routes';

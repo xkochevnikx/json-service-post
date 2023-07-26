@@ -1,15 +1,11 @@
-@import "reset";
-@import "variables";
-
+@import 'reset';
+@import 'variables';
 
 @font-face {
     font-family: Consolas;
-    src:
-        local("Consolas"),
-        url("./fonts/Consolas.ttf");
+    src: local('Consolas'), url('./fonts/Consolas.ttf');
 }
 
 * {
     font-family: var(--font-family-main);
 }
-
