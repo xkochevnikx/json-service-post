@@ -13,6 +13,8 @@ export function PaginationList (props) {
         changePageBack,
     } = props;
 
+    console.log(page);
+
     let pagesArray = getPagesCount(totalPages, limit);
 
     return (
@@ -22,7 +24,7 @@ export function PaginationList (props) {
                 {pagesArray.map(p => (
                 <MyButton
                     onClick={() => changePage(p)}
-                    className={page == p ? cls.page_current : cls.page}
+                    className={page === p && cls.pageCurrent}
                     key={p}>
                     {p}
                 </MyButton>

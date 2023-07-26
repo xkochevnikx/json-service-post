@@ -51,13 +51,13 @@ export const PostList = () => {
     return (
         <div>
             <div className={cls.sortBox}>
-                <div className={cls.item}></div>
-                <div className={cls.item}></div>
-                <div className={cls.item}></div>
+                <div className={cls.sortBoxItem}>ID</div>
+                <div className={cls.sortBoxItem}>Заголовок</div>
+                <div className={cls.sortBoxItem}>Описание</div>
             </div>
                 {seachedPosts.slice((page - 1) * limit, page * limit).map((post) => (
                      <div className={cls.container}>
-                     <div className={cls.item}>{post.id}</div>
+                     <div className={cls.item_id}>{post.id}</div>
                      <div className={cls.item}>{post.title}</div>
                      <div className={cls.item}>{post.body}</div>
                  </div>

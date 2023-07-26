@@ -1,21 +1,37 @@
 .sortBox {
     display:grid;
-    grid-template-columns: 10% 50% 40%;
+    grid-template-columns: 7% 50% 43%;
     grid-template-rows: repeat(1, 50px);
- }
+    background: #474955;
+}
+
+.sortBoxItem {
+    display: flex;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff
+}
+
 
 .container {
    display:grid;
-   grid-template-columns: 10% 50% 40%;
+   grid-template-columns: 7% 50% 43%;
    grid-template-rows: repeat(1, 60px);
    font-size: var(--font-size-s);
 }
 
-.item {
-    border: 1px solid black;
+.item, 
+.item_id {
+    border: 0.2px solid #E3E6EC;
     display: flex;
     padding: 10px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
+}
+
+.item_id {
+    justify-content: center;
 }
