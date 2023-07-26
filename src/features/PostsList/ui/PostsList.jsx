@@ -9,6 +9,8 @@ import { MyLoader } from "../../../shared/ui/MyLoader/MyLoader";
 
 export function PostsList () {
 
+    const [selectedSort, setSelectedSort] = useState(false);
+
     const [limit, setLimit] = useState(10);
 
     const [page, setPage] = useState(1);
@@ -35,7 +37,8 @@ export function PostsList () {
     
     const seachedPosts = usePosts(
         posts,
-        searchQuery
+        searchQuery,
+        selectedSort
     );
 
     function changePage(p) {
@@ -50,6 +53,10 @@ export function PostsList () {
         if(page > 1) setPage(p => p - 1);
     };
 
+    function changeSort() {
+        setSelectedSort(selectedSort => !selectedSort)
+    };
+
     if(isLoading) {
         return (
             <div className={cls.loaderBox}>
@@ -59,12 +66,15 @@ export function PostsList () {
     };
 
     return (
-        <div>
+        <div className={cls.PostsListBox}>
             <div className={cls.sortBox}>
                 <div className={cls.sortBoxItem}>ID <span className={cls.icon}>˅</span> </div>
                 <div className={cls.sortBoxItem}>Заголовок <span className={cls.icon}>˅</span> </div>
-                <div className={cls.sortBoxItem}>Описание <span className={cls.icon}>˅</span> </div>
+                <div 
+                onClick={changeSort}
+                className={cls.sortBoxItem}>Описание <span className={cls.icon}>˅</span> </div>
             </div>
+            <div className={cls.gridContainer}>
                 {seachedPosts.slice((page - 1) * limit, page * limit).map((post) => (
                      <div key={post.id}
                      className={cls.container}>
@@ -73,7 +83,10 @@ export function PostsList () {
                      <div className={cls.item}>{post.body}</div>
                  </div>
                 ))}
-            <PaginationList changePage={changePage} 
+            </div>
+            <PaginationList 
+                className={cls.PaginationList}
+                changePage={changePage} 
                 page={page} 
                 totalPages={seachedPosts.length} 
                 limit={limit}

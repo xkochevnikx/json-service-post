@@ -1,3 +1,15 @@
+.PostListBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.PaginationList {
+    position: relative;
+    bottom: 0px;
+}
+
 .sortBox {
     display:grid;
     grid-template-columns: 7% 50% 43%;
@@ -11,9 +23,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #fff
+    color: #fff;
+    cursor: pointer;
 }
 
+.gridContainer {
+    min-height: 600px;
+}
 
 .container {
    display:grid;
@@ -46,5 +62,6 @@
 .icon {
     position: relative;
     top: 4px;
-    left: 20px
+    left: 20px;
+    cursor: pointer;
 }

@@ -1,17 +1,31 @@
 import { useMemo } from "react";
 
 /**
- * Хук, осуществляет фильтрацию данных по поисковому запросу
+ * Хук, осуществляет cортировку и фильтрацию данных по поисковому запросу и флагу 
  * @posts массив постов
  * @searchQuery поисковая строка 
+ * 
  */
 
-export const usePosts = (posts, searchQuery) => {
+function useSortedPosts(posts, selectedSort) {
+  const sortedPosts = useMemo(() => {
+    if (selectedSort) {
+      return [...posts].sort((a, b) => b.body.length - a.body.length);
+    }
+    return posts;
+  }, [selectedSort, posts]);
+
+  return sortedPosts;
+}
+
+
+export function usePosts (posts, searchQuery, selectedSort) {
+  const sortedPosts = useSortedPosts(posts, selectedSort);
   const seachedPosts = useMemo(() => {
-    return posts.filter(post =>
+    return sortedPosts.filter(post =>
       post.title.toLowerCase().includes(searchQuery)
     );
-  }, [searchQuery, posts]);
+  }, [searchQuery, posts, selectedSort]);
 
   return seachedPosts;
 };
