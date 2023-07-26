@@ -5,6 +5,7 @@ import { usePosts } from "../../../shared/lib/hooks/usePosts";
 import { PaginationList } from "../../../entities/PaginationList/PaginationList";
 import { useSearchParams } from "react-router-dom";
 import cls from "./PostList.module.css"
+import { MyLoader } from "../../../shared/ui/MyLoader/MyLoader";
 
 export const PostList = () => {
 
@@ -28,6 +29,8 @@ export const PostList = () => {
 
     const posts = useSelector(state => state.posts.posts)
 
+    const isLoading = useSelector(state => state.posts.isLoading)
+
     const searchQuery = useSelector(state => state.search.text)
     
     const seachedPosts = usePosts(
@@ -47,6 +50,14 @@ export const PostList = () => {
     function changePageBack(p) {
         setPage(p => p - 1);
     };
+
+    if(isLoading) {
+        return (
+            <div className={cls.loaderBox}>
+                <MyLoader/>
+            </div>
+        )
+    }
 
     return (
         <div>

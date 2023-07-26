@@ -35,3 +35,10 @@
 .item_id {
     justify-content: center;
 }
+
+.loaderBox {
+   margin-top: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

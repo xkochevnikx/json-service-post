@@ -1,8 +1,8 @@
 .loader {
-  width: 50px;
-  height: 50px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
-  border: 5px black dashed;
+  border: 15px peru dashed;
   animation: rotate 1.5s infinite linear;
   animation-direction: alternate;
 }
