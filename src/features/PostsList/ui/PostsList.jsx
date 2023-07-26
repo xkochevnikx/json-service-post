@@ -7,6 +7,11 @@ import { useSearchParams } from "react-router-dom";
 import cls from "./PostsList.module.css";
 import { MyLoader } from "../../../shared/ui/MyLoader/MyLoader";
 
+/**
+ * Фича, содержит в себе логику отображения данных 
+ * @PostsList
+ */
+
 export function PostsList () {
 
     const [selectedSort, setSelectedSort] = useState(false);
@@ -19,10 +24,12 @@ export function PostsList () {
 
     const dispatch = useDispatch();
 
+    //при первом рендере дергаю запрос 
     useEffect(() => {
         dispatch(asyncfetchPosts());
     }, [dispatch]);
 
+    //вывожу номер страницы в адресную строку
     useEffect(() => {
           setParamsSearch({
             q: page,
@@ -33,8 +40,10 @@ export function PostsList () {
 
     const isLoading = useSelector(state => state.posts.isLoading);
 
+    //результат поискового запроса достаю из слайса фичи SearchPost
     const searchQuery = useSelector(state => state.search.text);
     
+    //хук возвращает отсортирванные и отфильтрованные посты, на вход принимает строку из фичи SearchPosts, флаг о необходимости сортировки по длинне тела поста и изначальный массив от сервера
     const seachedPosts = usePosts(
         posts,
         searchQuery,
@@ -57,6 +66,7 @@ export function PostsList () {
         setSelectedSort(selectedSort => !selectedSort)
     };
 
+    //пока загрузка показываю крутилку
     if(isLoading) {
         return (
             <div className={cls.loaderBox}>
@@ -88,7 +98,7 @@ export function PostsList () {
                 className={cls.PaginationList}
                 changePage={changePage} 
                 page={page} 
-                totalPages={seachedPosts.length} 
+                totalCount={seachedPosts.length} 
                 limit={limit}
                 changePageForward={changePageForward}
                 changePageBack={changePageBack}

@@ -1,11 +1,5 @@
 import { useMemo } from "react";
 
-/**
- * Хук, осуществляет cортировку и фильтрацию данных по поисковому запросу и флагу 
- * @posts массив постов
- * @searchQuery поисковая строка 
- * 
- */
 
 function useSortedPosts(posts, selectedSort) {
   const sortedPosts = useMemo(() => {
@@ -18,6 +12,12 @@ function useSortedPosts(posts, selectedSort) {
   return sortedPosts;
 }
 
+/**
+ * Хук, осуществляет cортировку и фильтрацию данных по поисковому запросу и флагу
+ * @posts - массив постов
+ * @searchQuery - поисковая строка
+ * @selectedSort - флаг о необходимости фильтрации
+ */
 
 export function usePosts (posts, searchQuery, selectedSort) {
   const sortedPosts = useSortedPosts(posts, selectedSort);
