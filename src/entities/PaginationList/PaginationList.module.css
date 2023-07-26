@@ -10,6 +10,15 @@
     display: flex;
     gap: 10px;
     font-size: var(--font-size-l);
+
+
+    @media (max-width: 610px) {
+        font-size: var(--font-size-s);
+    }
+    @media (max-width: 510px) {
+        font-size: var(--font-size-xxs);
+        gap: 5px;
+    }
 }
 
 .listBtn, 

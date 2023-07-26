@@ -4,5 +4,12 @@
     border: none;
     color: #474955;
     font-size: var(--font-size-xl);
+
+    @media all and (max-width: 610px) {
+        font-size: var(--font-size-m);
+    }
+    @media all and (max-width: 510px) {
+        font-size: var(--font-size-xs);
+    }
 }
 

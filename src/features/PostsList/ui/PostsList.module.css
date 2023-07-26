@@ -5,11 +5,6 @@
     height: 100%;
 }
 
-.PaginationList {
-    position: relative;
-    bottom: 0px;
-}
-
 .sortBox {
     display:grid;
     grid-template-columns: 7% 50% 43%;
@@ -25,6 +20,13 @@
     justify-content: center;
     color: #fff;
     cursor: pointer;
+
+    @media (max-width: 610px) {
+        font-size: var(--font-size-s);
+    }
+    @media (max-width: 510px) {
+        font-size: var(--font-size-xs);
+    }
 }
 
 .gridContainer {
@@ -36,6 +38,26 @@
    grid-template-columns: 7% 50% 43%;
    grid-template-rows: repeat(1, 60px);
    font-size: var(--font-size-s);
+
+   @media (max-width: 1110px) {
+    grid-template-rows: repeat(1, 80px);
+   }
+
+   @media (max-width: 960px) {
+    grid-template-rows: repeat(1, 100px);
+   }
+   @media (max-width: 610px) {
+    grid-template-rows: repeat(1, 130px);
+   }
+   @media (max-width: 510px) {
+    grid-template-rows: repeat(1, 145px);
+   }
+   @media (max-width: 460px) {
+    grid-template-rows: repeat(1, 150px);
+   }
+   @media (max-width: 375px) {
+    grid-template-rows: repeat(1, 160px);
+   }
 }
 
 .item, 
@@ -46,6 +68,15 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
+
+    @media (max-width: 960px) {
+        font-size: var(--font-size-xs);
+    }
+    @media (max-width: 510px) {
+        font-size: var(--font-size-xxs);
+        padding: 1px;
+    }
+
 }
 
 .item_id {
@@ -53,7 +84,7 @@
 }
 
 .loaderBox {
-   margin-top: 200px;
+    margin-top: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -64,4 +95,8 @@
     top: 4px;
     left: 20px;
     cursor: pointer;
+
+    @media (max-width: 510px) {
+        left: 5px;
+    }
 }

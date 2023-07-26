@@ -71,8 +71,8 @@ export function PostsList () {
                 <div className={cls.sortBoxItem}>ID <span className={cls.icon}>˅</span> </div>
                 <div className={cls.sortBoxItem}>Заголовок <span className={cls.icon}>˅</span> </div>
                 <div 
-                onClick={changeSort}
-                className={cls.sortBoxItem}>Описание <span className={cls.icon}>˅</span> </div>
+                    onClick={changeSort}
+                    className={cls.sortBoxItem}>Описание <span className={cls.icon}>˅</span> </div>
             </div>
             <div className={cls.gridContainer}>
                 {seachedPosts.slice((page - 1) * limit, page * limit).map((post) => (
