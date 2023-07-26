@@ -61,9 +61,9 @@ export function PostsList () {
     return (
         <div>
             <div className={cls.sortBox}>
-                <div className={cls.sortBoxItem}>ID</div>
-                <div className={cls.sortBoxItem}>Заголовок <span className={cls.sortBoxIcon}></span></div>
-                <div className={cls.sortBoxItem}>Описание</div>
+                <div className={cls.sortBoxItem}>ID <span className={cls.icon}>˅</span> </div>
+                <div className={cls.sortBoxItem}>Заголовок <span className={cls.icon}>˅</span> </div>
+                <div className={cls.sortBoxItem}>Описание <span className={cls.icon}>˅</span> </div>
             </div>
                 {seachedPosts.slice((page - 1) * limit, page * limit).map((post) => (
                      <div key={post.id}

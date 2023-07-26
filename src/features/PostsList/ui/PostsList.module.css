@@ -43,6 +43,8 @@
     align-items: center;
 }
 
-.sortBoxIcon {
-    background: url(../../../app/styles/assets/Group\ 2.svg) no-repeat;
+.icon {
+    position: relative;
+    top: 4px;
+    left: 20px
 }
