@@ -42,3 +42,7 @@
     justify-content: center;
     align-items: center;
 }
+
+.sortBoxIcon {
+    background: url(../../../app/styles/assets/Group\ 2.svg) no-repeat;
+}
