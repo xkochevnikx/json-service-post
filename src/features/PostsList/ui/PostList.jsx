@@ -7,25 +7,25 @@ import { useSearchParams } from "react-router-dom";
 import cls from "./PostList.module.css"
 import { MyLoader } from "../../../shared/ui/MyLoader/MyLoader";
 
-export const PostList = () => {
+export function PostList () {
 
     const [limit, setLimit] = useState(10);
 
     const [page, setPage] = useState(1);
 
-    const [_, setParamsSearch] = useSearchParams();
+    const [paramsSearch, setParamsSearch] = useSearchParams();
 
     const dispatch = useDispatch()
 
     useEffect(() => {
         dispatch(asyncfetchPosts());
-    }, []);
+    }, [dispatch]);
 
     useEffect(() => {
           setParamsSearch({
             q: page,
           }); 
-     }, [page]);
+     }, [page, setParamsSearch]);
 
     const posts = useSelector(state => state.posts.posts)
 
@@ -37,7 +37,6 @@ export const PostList = () => {
         posts,
         searchQuery
     );
-    console.log(seachedPosts);
 
     function changePage(p) {
         setPage(p);
@@ -67,7 +66,8 @@ export const PostList = () => {
                 <div className={cls.sortBoxItem}>Описание</div>
             </div>
                 {seachedPosts.slice((page - 1) * limit, page * limit).map((post) => (
-                     <div className={cls.container}>
+                     <div key={post.id}
+                     className={cls.container}>
                      <div className={cls.item_id}>{post.id}</div>
                      <div className={cls.item}>{post.title}</div>
                      <div className={cls.item}>{post.body}</div>

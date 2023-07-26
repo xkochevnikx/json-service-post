@@ -2,14 +2,27 @@
     width: 100%;
     display: flex;
     justify-content: space-around;
+    align-items: center;
     margin-top: 20px;
 }
 
 .paginList {
     display: flex;
     gap: 10px;
+    font-size: var(--font-size-l);
 }
 
-.pageCurrent {
-    color: red;
+.listBtn, 
+.activListBtn {
+    cursor: pointer;
+    font-style: italic;
+}
+
+.activListBtn {
+    color: #7EBC3C;
+}
+
+.pagBackBtn, 
+.pagFirstBtn {
+    font-size: var(--font-size-xl);
 }

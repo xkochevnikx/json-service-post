@@ -13,24 +13,25 @@ export function PaginationList (props) {
         changePageBack,
     } = props;
 
-    console.log(page);
-
     let pagesArray = getPagesCount(totalPages, limit);
 
     return (
         <div className={cls.wrapper}>
-            <MyButton onClick={changePageBack}>Назад</MyButton>
+            <MyButton className={cls.pagBackBtn}
+              onClick={changePageBack}>Назад</MyButton>
             <div className={cls.paginList}>
                 {pagesArray.map(p => (
-                <MyButton
+                <span
                     onClick={() => changePage(p)}
-                    className={page === p && cls.pageCurrent}
+                    className={p === page ? cls.activListBtn : cls.listBtn}
                     key={p}>
                     {p}
-                </MyButton>
+                </span>
             ))}
             </div>
-            <MyButton onClick={changePageForward}>Далее</MyButton>
+            <MyButton 
+            className={cls.pagFirstBtn}
+            onClick={changePageForward}>Далее</MyButton>
         </div>
     );
 };
