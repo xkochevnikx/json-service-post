@@ -21,7 +21,6 @@ export function SearchPosts () {
             <MyInput onChange={debounce} placeholder="Поиск"/>
             <MyInput type='submit' className={cls.btnSubmit} value=" "/> 
         </form>
-        
     );
 };
 

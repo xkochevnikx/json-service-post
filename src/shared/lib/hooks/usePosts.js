@@ -25,7 +25,7 @@ export function usePosts (posts, searchQuery, selectedSort) {
     return sortedPosts.filter(post =>
       post.title.toLowerCase().includes(searchQuery)
     );
-  }, [searchQuery, posts, selectedSort]);
+  }, [searchQuery, sortedPosts]);
 
   return seachedPosts;
 };
