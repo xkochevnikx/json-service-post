@@ -34,6 +34,7 @@ export const PostList = () => {
         posts,
         searchQuery
     );
+    console.log(seachedPosts);
 
     function changePage(p) {
         setPage(p);
@@ -49,21 +50,18 @@ export const PostList = () => {
 
     return (
         <div>
-            <div className={cls.container}>
-                <div className={cls.item}>1</div>
-                <div className={cls.item}>2</div>
-                <div className={cls.item}>3</div>
-                <div className={cls.item}>4</div>
-                <div className={cls.item}>5</div>
-                <div className={cls.item}>6</div>
-
+            <div className={cls.sortBox}>
+                <div className={cls.item}></div>
+                <div className={cls.item}></div>
+                <div className={cls.item}></div>
             </div>
-            
-            <h2>в фиче будет селект сверху и ниже сущность postList которой postItem</h2>
                 {seachedPosts.slice((page - 1) * limit, page * limit).map((post) => (
-                    <h2 key={post.id}>{post.id} {post.title}</h2>
+                     <div className={cls.container}>
+                     <div className={cls.item}>{post.id}</div>
+                     <div className={cls.item}>{post.title}</div>
+                     <div className={cls.item}>{post.body}</div>
+                 </div>
                 ))}
-
             <PaginationList changePage={changePage} 
                 page={page} 
                 totalPages={seachedPosts.length} 

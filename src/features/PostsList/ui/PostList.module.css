@@ -1,10 +1,21 @@
-.container {
-   display: grid;
-   grid-template-columns: 200px 1fr minmax(100px, 500px);
-   grid-template-rows: 100px 1fr;
+.sortBox {
+    display:grid;
+    grid-template-columns: 10% 50% 40%;
+    grid-template-rows: repeat(1, 50px);
+ }
 
+.container {
+   display:grid;
+   grid-template-columns: 10% 50% 40%;
+   grid-template-rows: repeat(1, 60px);
+   font-size: var(--font-size-s);
 }
 
 .item {
     border: 1px solid black;
+    display: flex;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }

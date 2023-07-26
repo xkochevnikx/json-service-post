@@ -1,0 +1,15 @@
+.wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.paginList {
+    display: flex;
+    gap: 10px;
+}
+
+.page_current {
+    color: red;
+}
