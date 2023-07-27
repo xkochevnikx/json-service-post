@@ -36,6 +36,8 @@
 
 ### Демонстрация интерфейса
 
+<a href="https://ibb.co/KbDh1qT"><img src="https://i.ibb.co/6r8wdPj/2023-07-26-16-39-13.png" alt="2023-07-26-16-39-13" border="0"></a>
+
 ### Установка
 
 Для установки и запуска проекта, необходим [NodeJS](https://nodejs.org) v8+.
