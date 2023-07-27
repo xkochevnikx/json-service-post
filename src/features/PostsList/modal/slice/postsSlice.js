@@ -33,4 +33,4 @@ const postsSlice = createSlice({
 });
 
 export const { actions: postsActions } = postsSlice;
-export default postsSlice.reducer;
+export const { reducer: postsSliceReducer } = postsSlice;

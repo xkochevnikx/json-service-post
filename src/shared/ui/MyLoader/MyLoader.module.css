@@ -1,17 +1,17 @@
 .loader {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  border: 15px peru dashed;
-  animation: rotate 1.5s infinite linear;
-  animation-direction: alternate;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 10px peru dashed;
+    animation: rotate 1.5s infinite linear;
+    animation-direction: alternate;
 }
 
 @keyframes rotate {
-  from {
-    transform: rotate(0deg) scale(1);
-  }
-  to {
-    transform: rotate(360deg) scale(1.3);
-  }
+    from {
+        transform: rotate(0deg) scale(1);
+    }
+    to {
+        transform: rotate(360deg) scale(1.3);
+    }
 }
