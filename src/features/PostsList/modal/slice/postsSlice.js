@@ -1,6 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { asyncfetchPosts } from '../services/asyncfetchPosts';
 
+/**
+ * Слайс, содержит в себе результат подгрузки списка постов с сервера и обрабатывает состояния фанка @asyncfetchPosts
+ * @postSlice
+ */
+
 const initialState = {
     posts: [],
     isLoading: false,

@@ -13,7 +13,15 @@ import { MyLoader } from '../../../shared/ui/MyLoader/MyLoader';
  */
 
 export function PostsList() {
+    //флаг состояния по которому осуществляется фильтрация в столбе "Описание" по критерию длинны тела поста.
     const [selectedSort, setSelectedSort] = useState(false);
+
+    //флаг состояния по которому осуществляется фильтрация в столбе "Заголовок" по критерию "Сортировка по алфавиту".
+    const [idSort, setIdSort] = useState(false);
+
+    //флаг состояния по которому осуществляется фильтрация в столбе "ID".
+    const [selectedTitleSort, setSelectedTitleSort] =
+        useState(false);
 
     const [limit, setLimit] = useState(10);
 
@@ -51,7 +59,9 @@ export function PostsList() {
     const seachedPosts = usePosts(
         posts,
         searchQuery,
-        selectedSort
+        selectedSort,
+        selectedTitleSort,
+        idSort
     );
 
     function changePage(p) {
@@ -70,6 +80,16 @@ export function PostsList() {
         setSelectedSort((selectedSort) => !selectedSort);
     }
 
+    function changeSortTitle() {
+        setSelectedTitleSort(
+            (selectedTitleSort) => !selectedTitleSort
+        );
+    }
+
+    function changeSortId() {
+        setIdSort((idSort) => !idSort);
+    }
+
     //пока загрузка показываю крутилку
     if (isLoading) {
         return (
@@ -82,10 +102,16 @@ export function PostsList() {
     return (
         <div className={cls.PostsListBox}>
             <div className={cls.sortBox}>
-                <div className={cls.sortBoxItem}>
+                <div
+                    className={cls.sortBoxItem}
+                    onClick={changeSortId}
+                >
                     ID <span className={cls.icon}>˅</span>{' '}
                 </div>
-                <div className={cls.sortBoxItem}>
+                <div
+                    className={cls.sortBoxItem}
+                    onClick={changeSortTitle}
+                >
                     Заголовок{' '}
                     <span className={cls.icon}>˅</span>{' '}
                 </div>
