@@ -48,7 +48,6 @@ export function usePosts(
         selectedTitleSort,
         idSort
     );
-    console.log(sortedPosts);
     const seachedPosts = useMemo(() => {
         return sortedPosts.filter((post) =>
             post.title.toLowerCase().includes(searchQuery)

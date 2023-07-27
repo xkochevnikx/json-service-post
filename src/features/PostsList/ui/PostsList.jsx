@@ -76,16 +76,19 @@ export function PostsList() {
         if (page > 1) setPage((p) => p - 1);
     }
 
+    //функция изменения флага на сортирвку по длинне тела поста
     function changeSort() {
         setSelectedSort((selectedSort) => !selectedSort);
     }
 
+    //функция изменения флага на сортирвку по алфавиту
     function changeSortTitle() {
         setSelectedTitleSort(
             (selectedTitleSort) => !selectedTitleSort
         );
     }
 
+    //функция изменения флага на сортирвку по id
     function changeSortId() {
         setIdSort((idSort) => !idSort);
     }
