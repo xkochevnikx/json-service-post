@@ -36,9 +36,9 @@
 
 ### Демонстрация интерфейса
 
-<a href="https://ibb.co/KbDh1qT"><img src="https://i.ibb.co/6r8wdPj/2023-07-26-16-39-13.png" alt="2023-07-26-16-39-13" border="0"></a>
+<a href="https://ibb.co/KbDh1qT"><img src="https://i.ibb.co/6r8wdPj/2023-07-26-16-39-13.png" alt="интерфейс" border="0"></a>
 
-<a href="https://ibb.co/Sf8CPzF"><img src="https://i.ibb.co/rdSrmVD/2023-07-26-16-09-20.png" alt="2023-07-26-16-09-20" border="0"></a>
+<a href="https://ibb.co/Sf8CPzF"><img src="https://i.ibb.co/rdSrmVD/2023-07-26-16-09-20.png" alt="фичи кода" border="0"></a>
 
 ### Установка
 
