@@ -8,6 +8,7 @@ import cls from './PostsList.module.css';
 import { MyLoader } from '../../../shared/ui/MyLoader/MyLoader';
 import { getPosts } from '../modal/selectors/getPosts';
 import { getPostsisLoading } from '../modal/selectors/getIsLoading';
+import { getSearchQuery } from '../../SearchPosts/modal/selectors/getSearchQuery';
 
 /**
  * Фича, содержит в себе логику отображения данных
@@ -51,9 +52,7 @@ export function PostsList() {
     const isLoading = useSelector(getPostsisLoading);
 
     //результат поискового запроса достаю из слайса фичи SearchPost
-    const searchQuery = useSelector(
-        (state) => state.search.text
-    );
+    const searchQuery = useSelector(getSearchQuery);
 
     //хук возвращает отсортирванные и отфильтрованные посты, на вход принимает строку из фичи SearchPosts, флаг о необходимости сортировки по длинне тела поста и изначальный массив от сервера
     const seachedPosts = usePosts(
