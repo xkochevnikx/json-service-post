@@ -6,6 +6,8 @@ import { PaginationList } from '../../../entities/PaginationList/PaginationList'
 import { useSearchParams } from 'react-router-dom';
 import cls from './PostsList.module.css';
 import { MyLoader } from '../../../shared/ui/MyLoader/MyLoader';
+import { getPosts } from '../modal/selectors/getPosts';
+import { getPostsisLoading } from '../modal/selectors/getIsLoading';
 
 /**
  * Фича, содержит в себе логику отображения данных
@@ -44,11 +46,9 @@ export function PostsList() {
         });
     }, [page, setParamsSearch]);
 
-    const posts = useSelector((state) => state.posts.posts);
+    const posts = useSelector(getPosts);
 
-    const isLoading = useSelector(
-        (state) => state.posts.isLoading
-    );
+    const isLoading = useSelector(getPostsisLoading);
 
     //результат поискового запроса достаю из слайса фичи SearchPost
     const searchQuery = useSelector(
