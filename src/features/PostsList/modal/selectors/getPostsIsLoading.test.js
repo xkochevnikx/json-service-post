@@ -1,14 +1,20 @@
+import { getPostsisLoading } from './getIsLoading';
+
 describe('getPostsIsLoading selector', () => {
     test('getPostsIsLoading', () => {
-        const posts = [
-            { id: 1, title: 'test', body: 'test' },
-        ];
         const state = {
             posts: {
-                posts,
+                isLoading: true,
             },
         };
-        const result = getPosts(state);
-        expect(result).toEqual(posts);
+        const result = getPostsisLoading(state);
+        expect(result).toEqual(true);
+    });
+    test('isLoading undefined', () => {
+        const state = {
+            posts: {},
+        };
+        const result = getPostsisLoading(state);
+        expect(result).toEqual(undefined);
     });
 });
