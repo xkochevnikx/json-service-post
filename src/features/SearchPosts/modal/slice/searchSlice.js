@@ -2,7 +2,6 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
     text: '',
-    error: '',
 };
 
 export const searchSlice = createSlice({
