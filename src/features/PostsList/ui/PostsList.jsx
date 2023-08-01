@@ -6,7 +6,7 @@ import { PaginationList } from '../../../entities/PaginationList/PaginationList'
 import { useSearchParams } from 'react-router-dom';
 import cls from './PostsList.module.css';
 import { MyLoader } from '../../../shared/ui/MyLoader/MyLoader';
-import { getPosts } from '../modal/selectors/getPosts';
+import { useGetPosts } from '../modal/selectors/getPosts';
 import { getPostsisLoading } from '../modal/selectors/getIsLoading';
 import { getSearchQuery } from '../../SearchPosts/modal/selectors/getSearchQuery';
 
@@ -47,7 +47,8 @@ export function PostsList() {
         });
     }, [page, setParamsSearch]);
 
-    const posts = useSelector(getPosts);
+    //кастомный хук сразу возвращает данные, сделал для примера
+    const posts = useGetPosts();
 
     const isLoading = useSelector(getPostsisLoading);
 
